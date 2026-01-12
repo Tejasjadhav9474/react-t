@@ -1,0 +1,54 @@
+/* Universal minimal CSS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, Arial, sans-serif;
+  background: #2b2a2a;
+  color: #eae3e3;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+
+.card {
+  background: lightblue;
+  color :black;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.navbar {
+  background: aqua;
+  color: black;
+  padding: 15px;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px;
+  
+}
