@@ -1,0 +1,42 @@
+/* Universal minimal CSS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, Arial, sans-serif;
+  background: #2b2a2a;
+  color: #eae3e3;
+}
+
+.btn-aurora {
+  background: linear-gradient(to right, #00FF85, #00BCD4); /* Neon Green to Cyan */
+  color: #000; /* Dark text for better readability on bright backgrounds */
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px; /* Pill shape */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-aurora:hover {
+  background: linear-gradient(to right, #00BCD4, #00FF85); /* Reverse on hover */
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #00FF85; /* Neon Green */
+  border-radius: 50px;
+  background: linear-gradient(45deg, #00FF85, #00BCD4);
+  color: #000;
+}
+
+
