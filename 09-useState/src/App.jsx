@@ -1,28 +1,42 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 const App = () => {
+  const [form, setForm] = useState({
+    email: "",
+    password: ""
+  });
 
-  const [first, setfirst] = useState(0)
+  function handleChange(e) {
+    const { name, value } = e.target;
 
-  function increase() {
-    setfirst(first + 1)
+    setForm(prev => ({
+      ...prev,
+      [name]: value
+    }));
   }
 
-  function decrease() {
-    setfirst(first - 1)
-  }
-
-  function jumpBy5() {
-    setfirst(first + 5)
-  }
   return (
     <div>
-      <h1>{first}</h1>
-      <button className="btn-aurora" onClick={increase}>increse</button>
-      <button className="btn-aurora" onClick={decrease}>decrease</button>
-      <button className="btn-aurora" onClick={jumpBy5}>jump by 5</button>
-    </div>
-  )
-}
+      <input
+        name="email"
+        placeholder="Email"
+        value={form.email}
+        onChange={handleChange}
+      />
 
-export default App
+      <input
+        name="password"
+        placeholder="Password"
+        value={form.password}
+        onChange={handleChange}
+      />
+
+      <p>{JSON.stringify(form.email)}</p>
+      <p>{JSON.stringify(form.password)}</p>
+    </div>
+  );
+};
+
+export default App;
+
+
