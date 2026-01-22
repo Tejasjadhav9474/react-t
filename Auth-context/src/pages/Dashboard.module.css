@@ -1,0 +1,55 @@
+.background {
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at top left, #1e1b4b, #020617);
+  padding: 2rem;
+  color: white;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+/* Neon dark card */
+.card {
+  position: relative;
+  padding: 1.8rem;
+  border-radius: 18px;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.95),
+    rgba(2, 6, 23, 0.98)
+  );
+  box-shadow:
+    0 0 0 1px rgba(99, 102, 241, 0.25),
+    0 25px 60px rgba(0, 0, 0, 0.85);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 0 35px rgba(99, 102, 241, 0.4),
+    0 30px 70px rgba(0, 0, 0, 0.95);
+}
+
+/* Logout button */
+.logout {
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  font-weight: 600;
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(239, 68, 68, 0.6);
+}
+
+
