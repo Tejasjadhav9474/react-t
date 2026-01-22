@@ -1,39 +1,53 @@
-import { useState, useContext } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    if (!username.trim()) return;
+  const [username, setUsername] = useState("");
+  const [role, setRole] = useState("user"); // ✅ DEFAULT USER
 
-    login(username);
-    navigate("/dashboard");
+  const handleLogin = () => {
+    login(username, role);
+
+    if (role === "admin") {
+      navigate("/admin");
+    } else {
+      navigate("/dashboard");
+    }
   };
 
   return (
-    <div className="p-6 max-w-md mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Login</h1>
+    <div className="h-screen flex items-center justify-center">
+      <div className="w-80 space-y-4">
+        <input
+          className="border p-2 w-full"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
 
-      <input
-        type="text"
-        placeholder="Enter username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        className="border p-2 w-full mb-4"
-      />
+        <select
+          className="border p-2 w-full"
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
+        >
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+        </select>
 
-      <button
-        onClick={handleLogin}
-        className="bg-black text-white px-4 py-2 rounded"
-      >
-        Login
-      </button>
+        <button
+          className="bg-black text-white p-2 w-full"
+          onClick={handleLogin}
+        >
+          Login
+        </button>
+      </div>
     </div>
   );
 };
 
 export default Login;
+
